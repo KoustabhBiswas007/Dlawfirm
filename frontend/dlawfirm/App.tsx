@@ -1,23 +1,28 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
-import {  StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Login } from './src/Login';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ */
 
-const stack = createNativeStackNavigator();
-export default function App() {
+import { NewAppScreen } from '@react-native/new-app-screen';
+import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+
+function App() {
+  const isDarkMode = useColorScheme() === 'dark';
+
   return (
-    
-    <SafeAreaView style={{ flex: 1 }}>
-      <NavigationContainer>
-        <stack.Navigator>
-          <stack.Screen name='Login' component={Login} options={{ headerShown: false }} />
-        </stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaView> 
+    <View style={styles.container}>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <NewAppScreen templateFileName="App.tsx" />
+    </View>
   );
 }
 
- 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
+export default App;

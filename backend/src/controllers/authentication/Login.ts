@@ -1,12 +1,13 @@
 import * as authInterfaces from '../../interface/AuthInterface'
 import { AuthModel } from '../../models/Authmodel';
 import { Encrypt } from '../../utility/Encrypt';
+
 export class Login {
     login =  async (data:authInterfaces.LoginData) => {
         const authmodelObj = new AuthModel();
         const encryptObj = new Encrypt();
         const user = await authmodelObj.getUser(data);
-
+        // console.log("TEST"+user.length);
         if(user.length > 0){
             const accessToken  = await encryptObj.generateAccessToken(data);
 

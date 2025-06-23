@@ -29,8 +29,8 @@ routes.get('/getRefreshToken',(req:Request,res:Response)=>{
 routes.post('/login', (req: Request, res: Response) => {
     const loginObj = new Login();
     loginObj.login(req.body).then((result) => {
-        // console.log(result);
-        res.status(result.statusCode).send(result);
+        console.log(result);
+        res.send(result);
     });
 
 

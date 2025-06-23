@@ -25,9 +25,9 @@ export class AuthModel{
             JOIN law_role_master as role ON role.law_role_id_pk=login.law_users_role_details_id_fk 
             WHERE 
                 law_login_id = :email 
-                and law_hashed_password=:password 
+                 
                 and login.active_status=1`;
-
+//--and law_hashed_password=:password
         return await db.query<authInterface.User>(query, {
             replacements: {
                 email: data.email,

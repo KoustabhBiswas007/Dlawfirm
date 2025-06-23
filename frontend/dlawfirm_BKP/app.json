@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "9eafaaee-eba9-4dd6-90fa-a3ce831f5d73"
+      }
+    },
+    "android": {
+      "package": "com.koustabh007.dlawfirm"
+    }
+  }
+}

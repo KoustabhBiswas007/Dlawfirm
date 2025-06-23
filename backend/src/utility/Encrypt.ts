@@ -62,7 +62,7 @@ export class Encrypt {
                 { userId: user[0].law_users_login_id_pk, email: user[0].law_login_id,role:user[0].law_role_id_pk },
                 await obj.encryptData(encDataInfo.secret_key),
                 {
-                    expiresIn: '5minutes',
+                    expiresIn: '10minutes',
                     algorithm: 'HS256'
                 }
             );
